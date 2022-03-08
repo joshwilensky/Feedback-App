@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Header({ text, bgColor, textColor }) {
+function Header({ text, fontSize, bgColor, textColor }) {
   const headerStyles = {
     backgroundColor: bgColor,
     color: textColor,
+    fontSize: fontSize
   };
 
   return (
@@ -19,13 +20,15 @@ function Header({ text, bgColor, textColor }) {
 }
 
 Header.defaultProps = {
-  text: "Feedback UI",
+  text: "Feedback",
+  fontSize: '30px',
   bgColor: "rgba(0,0,0,0.4)",
   textColor: "#ff6a95",
 };
 
 Header.propTypes = {
   text: PropTypes.string,
+  fontSize: PropTypes.string,
   bgColor: PropTypes.string,
   textColor: PropTypes.string,
 };

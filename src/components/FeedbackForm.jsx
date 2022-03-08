@@ -21,15 +21,11 @@ function FeedbackForm() {
     }
   }, [feedbackEdit]);
 
-  // NOTE: This should be checking input value not state as state won't be the updated value until the next render of the component
-
-  // prettier-ignore
-  const handleTextChange = ({ target: { value } }) => { // 👈  get the value
+  const handleTextChange = ({ target: { value } }) => {
     if (value === '') {
       setBtnDisabled(true)
       setMessage(null)
-      
-  // prettier-ignore
+
     } else if (value.trim().length < 10) { // 👈 check for less than 10
       setMessage('Text must be at least 10 characters')
       setBtnDisabled(true)
@@ -71,7 +67,7 @@ function FeedbackForm() {
           <input
             onChange={handleTextChange}
             type="text"
-            placeholder="Write a review"
+            placeholder="Write a review..."
             value={text}
           />
           <Button type="submit" isDisabled={btnDisabled}>
